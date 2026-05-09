@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Wish</title>
+    <link rel="stylesheet" href="./birthday.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./birthday.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+
+/* Side images */
+.side-img {
+    border-radius: 15px;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Center box */
+.center-box {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px gray;
+}
+
+/* Message */
+#message {
+    margin-top: 15px;
+    font-size: 18px;
+    color: blue;
+    opacity: 0;
+    transition: 1s;
+}
+
+.balloons {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    pointer-events: none;
+}
+
+.balloon {
+    width: 50px;
+    height: 70px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -100px;
+    animation: floatUp 6s infinite;
+}
+
+.balloon:nth-child(2) {
+    left: 50%;
+    background-color: blue;
+    animation-delay: 2s;
+}
+
+.balloon:nth-child(3) {
+    left: 80%;
+    background-color: yellow;
+    animation-delay: 4s;
+}
+.balloon:nth-child(4)
+{
+    right : 80%;
+    background-color: pink;
+    animation-delay: 2s;
+}
+.balloon:nth-child(5)
+{
+    right : 60%;
+    background-color: brown;
+    animation-delay: 2s;
+}
+.balloon:nth-child(6)
+{
+    right : 40%;
+    background-color: pink;
+    animation-delay: 2s;
+}
+.balloon:nth-child(7)
+{
+    right : 30%;
+    background-color: pink;
+    animation-delay: 2s;
+}
+.balloon:nth-child(8)
+{
+    right : 83%;
+    background-color: pink;
+    animation-delay: 2s;
+}
+.balloon:nth-child(9)
+{
+    right : 20%;
+    background-color: pink;
+    animation-delay: 2s;
+}
+.balloon:nth-child(10)
+{
+    right : 10%;
+    background-color: pink;
+    animation-delay: 2s;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-800px);
+    }
+}
+
+
+.top-section {
+    margin-top: 50px;
+}
+
+/* Gallery */
+.gallery {
+    margin-top: 30px;
+    display: none;   /* 🔴 Hidden initially */
+    background-color: aqua;
+}
+
+/* Images */
+.gallery img {
+    width: 250px;
+    height: 180px;
+    margin: 10px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+  </style>
+</head>
+<body>
+    
+     <div class="balloons">
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="ballon"></div>
+        <div class="ballon"></div>
+         <div class="ballon"></div>
+        <div class="ballon"></div>
+         <div class="ballon"></div>
+        <div class="ballon"></div>
+    </div>
+
+    
+<h1 style="text-align: center; color: crimson; border-radius: 10px;margin-top: 40px;padding: 40px;text-shadow: 70px;font-style: italic;font-weight: 900;font-size: 60px;">🎉🎈 Happy BirthDay Ammu 😍🥳</h1>
+<div class="container mt-5">
+    <div class="row text-center align-items-center">
+
+        <!-- LEFT IMAGE -->
+        <div class="col-sm-4">
+            <img src="./WhatsApp Image 2026-05-03 at 17.26.50.jpeg"
+                 class="img-fluid side-img">
+        </div>
+
+        <!-- CENTER CONTENT -->
+        <div class="col-sm-4 center-box" style="background-color: antiquewhite;">
+            <h1>🥳🎊🎉<center> Happy Birthday </center> 🎉🎊🥳</h1>
+        <h2 id="name" style="font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 40px; font-style: italic; color:darkorange;">Monisha</h2>
+<h1>👇<br></h1>
+            <button class="btn mt-3" style="background-color:darkolivegreen;font-weight: bold;font-size: large;" onclick="showWish()">
+                Click 🎁
+            </button>
+
+            <p id="message"></p>
+        </div>
+
+        <!-- RIGHT IMAGE -->
+        <div class="col-sm-4">
+            <img src="./WhatsApp Image 2026-02-28 at 10.04.46.jpeg"
+                 class="img-fluid side-img">
+        </div>
+
+    </div>
+<br>
+<br>
+<br>
+<br>
+<!-- 
+    <div class="row text-center align-items-center">
+        <div class="col-sm-4">
+            <img src="./WhatsApp Image 2026-05-03 at 17.26.49 (3).jpeg" class="img-fluid side-img" height="400px" width="400px">
+        </div> -->
+
+        <!-- <div class="col-sm-12 center-box">
+            <div class="top-section">
+            <h2 style="font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 30px; font-style: italic; color: orange;">Gallery</h2>
+            <button class="btn btn-warning mt-3" onclick="showGallery()">View Gallery</button>
+        </div>
+
+
+        <div id="gallery" class="gallery" style="background-color:lightcyan;"> -->
+      
+     
+
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+</div>
+<br>
+     <center>     <h1 style="color: darkred;font-weight: 900; font-style: italic;">BirthDay Girl 👧</h1></center>
+     <br>
+<div class="container" style="padding-top: 20px;">
+<center>   <p style="font-size:large;font-weight: 900;color: darkmagenta;">
+         <img src="./images/pic1.jpg" height="500px" width="500px" style="border-radius: 10px;">
+         <br>
+         <pre style="border-color: #ff9a9e; border: 1px; background-color:blanchedalmond;font-size:large;font-weight: 900;color: darkmagenta;border-left-width: 200px;">
+<b>Happy Birthday to the most special person in my life Ammu 💖
+Today is not just another day,  
+It is the day someone truly wonderful came into this world. 🌸
+You are one of the most beautiful part of my life, those golden memories 
+and I feel lucky to have you in my life. ✨</b> </pre>
+</p></div></center>
+
+
+<br>
+<center>
+   <div class="balloon-line">
+        🎈 🎉 🎈 🎉 🎈  🎈 🎈 🎉 🎈 🎉 🎈  🎈 🎉 🎈 🎉 🎈  🎉 🎈 🎉 🎈  🎈 🎉 🎈 🎉 🎈 
+    </div>
+</center>
+    <br>
+
+<div class="container" style="padding-top: 20px;">
+<center>   <p>
+         <img src="./images/pic15.jpg" height="500px" width="500px" style="border-radius: 10px;">
+         <br>
+<pre style="border-color: #ff9a9e; border: 1px; background-color:gainsboro;font-size:large;font-weight: 900;color: darkmagenta;border-left-width: 200px;">
+Your smile has the power to brighten 
+even my worst days,  
+and your happiness means more to me 
+than words can explain. 💕
+Every moment spent talking with you 
+feels so peaceful and special.  
+You make ordinary days feel best.
+thank you so much for giving me whatever i asked for 🌹</pre> <br>
+
+</p></div></center>
+
+<br>
+<center>
+   <div class="balloon-line">
+        🎈 🎉 🎈 🎉 🎈  🎈 🎈 🎉 🎈 🎉 🎈  🎈 🎉 🎈 🎉 🎈  🎉 🎈 🎉 🎈  🎈 🎉 🎈 🎉 🎈 
+    </div>
+</center>
+    <br>
+
+<div class="container" style="padding-top: 20px;">
+<center>   <p style="font-size:large;font-weight: 900;color: darkmagenta;">
+         <img src="./images/pic4.jpg" height="500px" width="500px" style="border-radius: 10px;">
+         <br>
+<pre style="border-color: #ff9a9e; border: 1px; background-color:blanchedalmond;font-size:large;font-weight: 900;color: darkmagenta;border-left-width: 200px;">
+I hope this birthday brings you endless happiness,  
+beautiful memories, and success in everything you dream of. 🎂
+May your life always be filled with love,laughter, positivity, and peace. 🌈
+You deserve all the happiness in this world  
+because your heart is truly kind and beautiful. 💫</pre> <br>
+
+
+</p></div></center>
+
+<br>
+
+<center>
+   <div class="balloon-line">
+        🎈 🎉 🎈 🎉 🎈  🎈 🎈 🎉 🎈 🎉 🎈  🎈 🎉 🎈 🎉 🎈  🎉 🎈 🎉 🎈  🎈 🎉 🎈 🎉 🎈 
+    </div>
+</center>
+    <br>
+
+<div class="container" style="padding-top: 20px;">
+<center>   <p style="font-size:large;font-weight: 900;color: darkmagenta;">
+         <img src="./images/pic2.jpg" height="500px" width="500px" style="border-radius: 10px;">
+         <br>
+<pre style="border-color: #ff9a9e; border: 1px; background-color:gainsboro;font-size:large;font-weight: 900;color: darkmagenta;border-left-width: 200px;">
+Thank you for being such an important person in my life.  
+Your presence alone makes everything feel better. 🌷
+I still remember the moments we shared,  
+the conversations, the laughter, and 
+the memories that became precious to me. 💖</pre> <br>
+</p></div></center>
+
+<br>
+
+<center>
+   <div class="balloon-line">
+        🎈 🎉 🎈 🎉 🎈  🎈 🎈 🎉 🎈 🎉 🎈  🎈 🎉 🎈 🎉 🎈  🎉 🎈 🎉 🎈  🎈 🎉 🎈 🎉 🎈 
+    </div>
+</center>
+    <br>
+
+<div class="container" style="padding-top: 20px;">
+<center>   <p style="font-size:large;font-weight: 900;color: darkmagenta;">
+         <img src="./images/pic5.jpg" height="500px" width="500px" style="border-radius: 10px;">
+         <br>
+<pre style="border-color: #ff9a9e; border: 1px; background-color:blanchedalmond;font-size:large;font-weight: 900;color: darkmagenta;border-left-width: 200px;">
+No matter how busy life becomes,  
+you will always remain someone very special in my heart. ❤️
+I wish I could make this day as beautiful as your smile. 😊
+May your life be filled with joy,  
+and may all your dreams come true one by one. 🌟 </pre><br>
+
+</p></div></center>
+
+<br>
+
+<center>
+   <div class="balloon-line">
+        🎈 🎉 🎈 🎉 🎈  🎈 🎈 🎉 🎈 🎉 🎈  🎈 🎉 🎈 🎉 🎈  🎉 🎈 🎉 🎈  🎈 🎉 🎈 🎉 🎈 
+    </div>
+</center>
+    <br>
+
+<div class="container" style="padding-top: 20px;">
+<center>   <p style="font-size:large;font-weight: 900;color: darkmagenta;">
+         <img src="./images/pic6.jpg" height="500px" width="500px" style="border-radius: 10px;">
+         <br>
+<pre style="border-color: #ff9a9e; border: 1px; background-color:gainsboro;font-size:large;font-weight: 900;color: darkmagenta;border-left-width: 200px;">
+Always remember there is someone who is always waiting and 
+genuinely cares about you deeply. 💕
+I hope your future becomes brighter than ever before,  
+filled with beautiful surprises and achievements. 🎉
+You are strong, talented, caring, and truly unique. 🌹</pre> <br>
+</p></div></center>
+
+<br>
+
+<center>
+   <div class="balloon-line">
+        🎈 🎉 🎈 🎉 🎈  🎈 🎈 🎉 🎈 🎉 🎈  🎈 🎉 🎈 🎉 🎈  🎉 🎈 🎉 🎈  🎈 🎉 🎈 🎉 🎈 
+    </div>
+</center>
+    <br>
+
+<div class="container" style="padding-top: 20px;">
+<center>   <p style="font-size:large;font-weight: 900;color: darkmagenta;">
+         <img src="./images/pic7.jpg" height="500px" width="500px" style="border-radius: 10px;">
+         <br>
+<pre style="border-color: #ff9a9e; border: 1px; background-color:blanchedalmond;font-size:large;font-weight: 900;color: darkmagenta;border-left-width: 200px;">
+May this birthday mark the beginning of a new chapter  
+filled with success, peace, love, and endless smiles. 🌈
+No matter where life takes us,  
+I will always wish the very best for you from my heart. ❤️
+You deserve genuine happiness, true love, and all the beautiful things in life. 🌸 </pre><br>
+</p></div></center>
+
+<br>
+
+<center>
+   <div class="balloon-line">
+        🎈 🎉 🎈 🎉 🎈  🎈 🎈 🎉 🎈 🎉 🎈  🎈 🎉 🎈 🎉 🎈  🎉 🎈 🎉 🎈  🎈 🎉 🎈 🎉 🎈 
+    </div>
+</center>
+    <br>
+
+<div class="container" style="padding-top: 20px;">
+<center>   <p style="font-size:large;font-weight: 900;color: darkmagenta;">
+         <img src="./images/pic8.jpg" height="500px" width="500px" style="border-radius: 10px;">
+         <br>
+<pre style="border-color: #ff9a9e; border: 1px; background-color:gainsboro;font-size:large;font-weight: 900;color: darkmagenta;border-left-width: 200px;">
+I hope today becomes one of the happiest memories of your life. 🎂
+Once again, Happy Birthday to the most precious and unforgettable person. 💖✨
+Stay happy, stay blessed, and always keep smiling. 🌹🎉</pre>
+</p></div></center>
+<!-- <script src="birthday.js"></script> -->
+
+<br>
+<br>
+<br>
+
+
+<br>
+<br>
+ <center>     <h1 style="color: darkred;font-weight: 900; font-style: italic;">Memories Jnapakalu 🫶🏻🥹❤️‍🩹</h1>
+     <br>
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+       <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
+             <button type="button" data-bs-target="#demo" data-bs-slide-to="5"></button>
+                    
+  </div>
+  
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="./images/pic10.jpg" style="height:500px;width:500px; ">
+    </div>
+    <div class="carousel-item">
+      <img src="./images/pic11.jpg" style="height:500px;width:500px;">
+    </div>
+    <div class="carousel-item">
+      <img src="./images/pic12.jpg" style="height:500px; width: 500px;">
+    </div>
+     <div class="carousel-item">
+      <img src="./images/pic13.jpg" style="height:500px; width: 500px;;">
+    </div>
+     <div class="carousel-item">
+      <img src="./images/pic14.jpg" style="height:500px; width: 500px;">
+    </div>
+     <div class="carousel-item">
+      <img src="./images/pic17.jpg" style="height:500px; width: 500px;;">
+    </div>
+  </div>
+  
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev" style="color: black;">prev
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next" style="color: black;">next
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+</center>
+<br>
+<br>
+
+<br>
+<center>
+
+    <center>     <h1 style="color: darkred;font-weight: 900; font-style: italic;">Apology 🙏</h1>
+
+<div class="container" style="padding-top: 20px;">
+<p id="sorryMessage" style="font-weight: 900; font-style: italic;font-size: larger;color: darkmagenta;">Monisha 
+    I am really sorry sorry sorry for hurting you and breaking your trust 💔
+
+    Your very much special to me, and I never wanted to make you sad or to hate me. 
+
+    I made a bigger mistakes, but my care for you was and is always real. 💖
+
+    I regret every word and everything that caused you pain that caused you feel worst 😔
+
+    Please forgive me if possible and give me one chance to make things better please. 🌷
+
+    You mean everything to me till date no matter what. ✨
+
+    I never wanted to repeat the same things of creating problem in ur house but in that moment I could'nt control my emotions I am Sorry. ❤️
+
+    You are an amazing person, and you deserve kindness, respect, and happiness always. 
+
+    No matter what happens, I will always wish the best for you from my heart and always pray for you. 💕
+
+    Once again, I am truly sorry sorry sorry sorry sorry sorry sorry.🙏</p>
+<img src="./images/pic9.jpg"  height="600px" width="600px" style="border-radius: 10px;">
+<br>
+<br>
+
+</div></center>
+<br>
+<br>
+<center>
+<h1 style="color: darkgreen;font-weight: 900;font-style: italic;">ONCE AGAIN HAPPY BIRTHDAY MONISHA ❤️🎊🎉</h1></center>
+ <script>
+    function showWish() {
+
+    var message = document.getElementById("message");
+
+    message.innerHTML = "🎂Happiest Birthday Monisha May God bless you with lots of happiness and prosperity 💕. Your always the best 😍. I am extremely sorry for what I have done. Please forgive me.. I want you to be with me for life Long. U will be always special for me no matter what.. I cannot replace you. The way u cared me thought me helped me each n every time. I am always thankful for it. Once Again happiest Birthday 🎊💕🎂 Ammu 🎉";
+    message.style.opacity = "3";
+    message.style.color = "deeppink";
+        message.style.fontWeight = "900";
+    message.style.fontSize = "larger";
+    
+
+
+    
+}
+
+// function showGallery() {
+//     var gallery = document.getElementById("gallery");
+// gallery.style.backgroundColor = "lightcyan";
+//     if (gallery.style.display === "block") {
+//         gallery.style.display = "none";
+//     } else {
+//         gallery.style.display = "block";
+//     }
+// }
+ </script>
+</body>
+</html>
